@@ -1,0 +1,116 @@
+.leftContainer{
+    float:left;
+    width: 50%;
+    height:auto
+}
+
+.rightContainer{
+    float:right;
+    width: 50%;
+}
+#containerInput {
+    width:400px;
+    height:auto;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px 40px ;
+    position:relative;
+    margin-right: 0px;
+}
+
+.title{
+    padding: 10px;
+    background-color: grey;
+    margin:0px;
+    border-radius: 60px 120px 0px 0px;
+}
+
+#containerInputForm {
+    padding: 15px;
+}
+
+.eachRoomInput{
+    width: 600px;
+    height:auto;
+    padding-bottom: 20px;
+    background-color: white;
+    border: 1px solid black;
+    position: relative; /* having a absolute, it worked if nothing else was below it */
+}
+
+.titleName{
+    padding: 10px;
+    background-color: grey;
+    margin:0px; 
+}
+
+.button{
+    padding: 10px;
+    background-color: grey;
+    margin:0px; 
+    border-radius: 10px;
+}
+
+#submitCalculation{
+    position:relative; 
+    margin-left: 400px;
+    margin-top: 10px;
+}
+
+.space{
+    width:400px;
+    height:40px;
+    position: relative;
+}
+#roomTotalInfo,
+#sqftTotalInfo,
+#sqftInfo,
+#roomPriceInfo,
+#paymentInfo{
+    display:flex;
+    flex-wrap: wrap;
+}
+.eachRoomInputCell,
+.overallCell{
+    padding-left: 30px;
+    position: relative;
+    margin:0;
+    width:300px;
+    display:block;
+   
+}
+
+.eachRoomInputCell p,
+.overallCell p{
+   margin-right: 20px;
+}
+
+input[type="number"],
+.container p{
+    width:100px;
+    height:25px;
+    margin-top: 12.5px;
+    margin-bottom: 12.5px;
+
+}
+
+.container p{
+   height:20px;
+   padding: 8px 0px;
+   width:140px;
+}
+#submitnumberOfRoomType{
+    margin-left:100px;
+}
+
+.container{
+    display:inline-flex;
+    width: 100%; /* Ensure the container takes the full width of its parent */
+
+}
+
+.payments{
+    width:800px;
+    border: 1px solid black;
+}
+

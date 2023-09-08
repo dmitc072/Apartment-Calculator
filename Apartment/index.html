@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="leftContainer">
+        <div class="containerInput" id="containerInput">
+            <div class="titleInput" id="titleInput">
+                <p class="title">User Input</p>
+            </div>
+            <form class="containerInput" id="containerInputForm" action="/action_page.php">
+                <label for="numberOfRoomType">Quantity of Type of Rooms</label>
+                <input type="number" id="numberOfRoomType" name="numberOfRoomType" value="">
+                <input type="button" class="button" id="submitnumberOfRoomType" name="submitnumberOfRoomType" value="Submit Number Of Rooms">
+            </form>
+        </div>
+        <div class="space">
+        </div>
+   
+        <div class="eachRoomInput" id="eachRoomInput">
+            <div class="titleInput" id="titleInput">
+                <p class="titleName">Room Calculator</p>
+                <input type="button" class="button" id="submitCalculation" name="submitCalculation" value="Submit Number Of Rooms">
+            </div>
+            <div class="container" id="container">
+                <div class="eachRoomInputCell roomNumberColumn" id="roomPriceInfo">
+                    <p class="roomNumber selection" id="roomNumber">Room Price: $ </p>
+                    <input type="number" class="roomNumberPrice selection" id="" name="" value="" disabled>
+                </div>
+                <div class="eachRoomInputCell sqftNumberColumn" id="sqftInfo">
+                    <p class="sqftInfoTitle">Sqft per Room</p>
+                    <input type="number" class="sqftInput" id="" name="" value="" disabled>
+                </div>
+            </div>   
+        </div>
+   
+    
+        <div class="space">
+        </div>
+
+        <div class="eachRoomInput" id="eachRoomInput">
+            <div class="titleInput" id="titleInput">
+                <p class="titleName">Total Room Calculator</p>
+            </div>
+            <div class="container" id="container">
+                <div class="eachRoomInputCell roomNumberColumn" id="roomTotalInfo">
+                    <p class="roomNumber selection" id="roomNumber"># of Rooms for Room </p>
+                    <input type="number" class="roomNumberTotalInput selection" id="" name="" value="" disabled>
+                </div>
+                <div class="eachRoomInputCell sqftNumberColumn" id="sqftTotalInfo">
+                    <p class="sqftInfoTitle">Sqft Total per Room</p>
+                    <input type="number" class="sqftTotalInput" id="" name="" value="" disabled>
+                </div>
+            </div>   
+        </div>
+    </div>  
+    
+    <div class="rightContainer">
+        <div class="payments" id="payments">
+            <div class="titleInput" id="titleInput">
+                <p class="titleName">Payments</p>
+            </div> 
+            <div class="container" id="container">
+                <div class="overallCell" id="paymentInfo">
+                    <p class="rightContainer">Total Rooms</p>
+                    <input type="number" class="roomNumberTotalInput" id="roomNumberTotal" name="sqftTotalForRoom" value="", disabled>
+                    <p class="rightContainer">Total SquareFoot of Apartment</p>
+                    <input type="number" class="rightContainer" id="totalForRoomCalc" name="sqftTotalForRoom" value="", disabled>
+                    <p class="rightContainer">Cost Per Sqt:  $</p>
+                    <input type="number" class="rightContainer" id="costPerSqt" name="" value="">
+                    <p class="rightContainer">Total Cost of the Apartment:  $</p>
+                    <input type="number" class="rightContainer" id="totalCostOfTheApartment" name="totalCostOfTheApartment" value="", disabled>
+                    <p class="rightContainer">Interest Rate: %</p>
+                    <input type="number" class="rightContainer" id="interestRate" name="interestRate" value="">
+                    <p class="rightContainer">Length of Term (in months)</p>
+                    <input type="number" class="rightContainer" id="term" name="term" value="">
+                    <p class="rightContainer">Monthly Mortgage:  $</p>
+                    <input type="number" class="rightContainer" id="monthlyMortgage" name="monthlyMortgage" value="", disabled>
+                    <p class="rightContainer">Tentants Monthly Payments: $</p>
+                    <input type="number" class="rightContainer" id="tentantsPayment" name="tentantsPayment" value="", disabled>
+                    <p class="rightContainer">Your Monthly Return:$</p>
+                    <input type="number" class="rightContainer" id="monthlyReturn" name="monthlyReturn" value="", disabled>
+                    <p class="rightContainer">Your Annual Return:$</p>
+                    <input type="number" class="rightContainer" id="annualReturn" name="annualReturn" value="", disabled>
+                </div>
+            </div>   
+        </div>
+    </div>
+    </div>
+    <script src="apartment.js"></script>
+    <script src="calculation.js"></script>
+    <script src="totalInvestment.js"></script>
+</body>
+</html>
