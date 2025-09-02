@@ -1,116 +1,257 @@
-.leftContainer{
-    float:left;
-    width: 50%;
-    height:auto
+/* ========== Base / Mobile-first ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.rightContainer{
-    float:right;
-    width: 50%;
+:root {
+  --space: clamp(8px, 1.8vw, 16px);
+  --space-lg: clamp(12px, 2.4vw, 24px);
 }
+
+html {
+  font-size: 16px;
+}
+body {
+  margin: 0;
+}
+
+/* ===== Unified title text style (keep titles the same) ===== */
+.title,
+.titleProject,
+.titleName {
+  background-color: grey;
+  color: #fff;
+  padding: var(--space);
+  margin: 0;
+  text-align: center;
+  font-size: clamp(1rem, 2.4vw, 1.125rem);
+}
+
+/* Preserve each title's unique shape */
+.title {
+  border-radius: 60px 120px 0 0;
+}
+.titleProject {
+  border-radius: 0;
+}
+.titleName {
+  border-radius: var(--radius);
+}
+
+/* ===== Columns wrapper ===== */
+.pageColumns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  padding: 0 var(--space);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left column (content) */
+.leftContainer {
+  flex: 1 1 600px; /* grows on wide, full width on mobile */
+  max-width: 800px; /* optional cap */
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+/* Right column (sidebar) — narrower by default */
+.rightContainer {
+  flex: 0 1 360px;
+  max-width: 420px;
+  width: 100%;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+}
+
+/* Inputs in each column */
+.leftContainer input,
+.rightContainer input {
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+}
+
+/* ===== Cards / blocks ===== */
 #containerInput {
-    width:400px;
-    height:auto;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 20px 40px ;
-    position:relative;
-    margin-right: 0px;
-}
-
-.title{
-    padding: 10px;
-    background-color: grey;
-    margin:0px;
-    border-radius: 60px 120px 0px 0px;
+  width: min(100%, 420px); /* fluid on mobile, capped on desktop */
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 20px 40px;
+  position: relative;
+  margin-right: 0;
 }
 
 #containerInputForm {
-    padding: 15px;
+  padding: var(--space-lg);
 }
 
-.eachRoomInput{
-    width: 600px;
-    height:auto;
-    padding-bottom: 20px;
-    background-color: white;
-    border: 1px solid black;
-    position: relative; /* having a absolute, it worked if nothing else was below it */
+.eachRoomInput {
+  width: 100%;
+  padding-bottom: var(--space-lg);
+  background-color: #fff;
+  border: 1px solid #000;
+  position: relative;
+  border-radius: var(--radius);
 }
 
-.titleName{
-    padding: 10px;
-    background-color: grey;
-    margin:0px; 
+.button {
+  padding: 10px 14px;
+  background-color: grey;
+  color: #fff;
+  margin: 0;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
 }
 
-.button{
-    padding: 10px;
-    background-color: grey;
-    margin:0px; 
-    border-radius: 10px;
+#submitCalculation {
+  position: relative;
+  margin: var(--space) 0 0;
+  width: 130px; /* make it about 40px wide */
+  min-width: 130px;
+  text-wrap: auto;
+  margin-left: 20px;
 }
 
-#submitCalculation{
-    position:relative; 
-    margin-left: 400px;
-    margin-top: 10px;
+/* Spacer */
+.space {
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
+  position: relative;
 }
 
-.space{
-    width:400px;
-    height:40px;
-    position: relative;
-}
+/* Info sections */
 #roomTotalInfo,
 #sqftTotalInfo,
 #sqftInfo,
 #roomPriceInfo,
-#paymentInfo{
-    display:flex;
-    flex-wrap: wrap;
+#paymentInfo {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 20px;
 }
+
+/* Cells */
 .eachRoomInputCell,
-.overallCell{
-    padding-left: 30px;
-    position: relative;
-    margin:0;
-    width:300px;
-    display:block;
-   
+.overallCell {
+  position: relative;
+  margin: 0;
+  width: clamp(240px, 48%, 320px); /* 2-up on mobile/tablet, nice wrap */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
 }
 
 .eachRoomInputCell p,
-.overallCell p{
-   margin-right: 20px;
+.overallCell p {
+  margin: 0;
 }
 
+/* Inline label + input defaults */
 input[type="number"],
-.container p{
-    width:100px;
-    height:25px;
-    margin-top: 12.5px;
-    margin-bottom: 12.5px;
-
+.container p {
+  width: auto; /* let them shrink on mobile */
+  height: 32px;
+  margin: 10px 0;
 }
 
-.container p{
-   height:20px;
-   padding: 8px 0px;
-   width:140px;
-}
-#submitnumberOfRoomType{
-    margin-left:100px;
-}
-
-.container{
-    display:inline-flex;
-    width: 100%; /* Ensure the container takes the full width of its parent */
-
+/* paragraph labels inside input rows */
+.container p {
+  height: auto;
+  padding: 8px 0;
+  width: auto;
+  flex: 0 0 auto;
 }
 
-.payments{
-    width:800px;
-    border: 1px solid black;
+/* Submit for number of rooms */
+#submitnumberOfRoomType {
+  margin-left: 0;
 }
 
+/* Row container for label + input */
+.container {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap; /* wrap on small screens */
+}
+
+.container input {
+  height: 36px;
+  padding: 8px 10px;
+}
+
+/* Payments card */
+.payments {
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: var(--radius);
+}
+
+/* ========== Responsive tweaks ========== */
+
+/* Phones: stack full width, bigger tap targets, center things */
+@media (max-width: 700px) {
+  .leftContainer,
+  .rightContainer {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: var(--space);
+  }
+
+  #containerInput {
+    width: 100%;
+  }
+
+  #submitCalculation {
+    margin: var(--space) auto 0;
+    display: block;
+  }
+
+  .eachRoomInputCell,
+  .overallCell {
+    width: 100%;
+    justify-content: space-between; /* label left, input right */
+  }
+
+  .container {
+    justify-content: space-between;
+  }
+
+  .container p {
+    flex: 1 1 auto;
+  }
+
+  .container input {
+    flex: 1 1 160px; /* inputs grow but don’t overflow */
+    min-width: 0;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .eachRoomInputCell,
+  .overallCell,
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .container p,
+  .container input {
+    width: 100%;
+  }
+}
