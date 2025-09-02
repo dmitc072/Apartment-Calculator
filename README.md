@@ -34,3 +34,5 @@ git clone https://github.com/dmitc072/Apartment-Calculator.git
 cd Apartment-Calculator
 open index.html
 ```
+## 📄 License
+This project is licensed under the [MIT License](https://github.com/dmitc072/Apartment-Calculator/blob/main/LICENSE).
